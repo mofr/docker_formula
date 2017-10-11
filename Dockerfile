@@ -3,6 +3,7 @@ FROM ubuntu:16.04
 RUN apt-get update
 RUN apt-get install -y build-essential re2c libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev valgrind lcov ninja-build nodejs wget curl git
 RUN curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+ENV HOME /root
 ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 RUN eval "$(pyenv init -)"
