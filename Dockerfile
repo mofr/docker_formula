@@ -9,5 +9,6 @@ ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 RUN eval "$(pyenv init -)"
 RUN pyenv install 3.6.3
 RUN pyenv global 3.6.3
+RUN pip install --upgrade pip
 RUN pip install mock pytest pytest-benchmark cmake
 # RUN wget https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz && tar -xvzf emsdk-portable.tar.gz && cd emsdk-portable && ./emsdk update && ./emsdk install latest && ./emsdk activate latest && /bin/bash -c "source ./emsdk_env.sh" && cd ..
